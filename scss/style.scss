@@ -1,0 +1,33 @@
+body{
+    background-color:#ebebeb;
+    font-family: 'Cutive Mono', monospace;
+    
+    .reciept{
+        max-width: 443px;
+        margin: 4rem auto;
+
+        &-banner{ 
+            display: flex;
+            background-color: #333333;
+            align-items: center;
+            justify-content: space-around;
+            padding: 2rem 0rem;
+            i{
+                color: white;
+                font-size: 3.10rem;
+            }
+            p{
+                color:white;
+                margin:0rem;
+            }
+        }
+        &-card{
+            background:white;
+            table{
+                td{
+                    border:none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+body {
+  background-color: #ebebeb;
+  font-family: 'Cutive Mono', monospace; }
+  body .reciept {
+    max-width: 443px;
+    margin: 4rem auto; }
+    body .reciept-banner {
+      display: flex;
+      background-color: #333333;
+      align-items: center;
+      justify-content: space-around;
+      padding: 2rem 0rem; }
+      body .reciept-banner i {
+        color: white;
+        font-size: 3.10rem; }
+      body .reciept-banner p {
+        color: white;
+        margin: 0rem; }
+    body .reciept-card {
+      background: white; }
+      body .reciept-card table td {
+        border: none; }
+
+/*# sourceMappingURL=style.css.map */

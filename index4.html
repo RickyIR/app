@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Apple</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+
+  <!-- icons  -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+  <!-- style -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="scss/style.scss">
+</head>
+<body>
+  
+
+    <form id="form-items">
+
+      <button class="btn" type="button">1</button>
+      <button class="btn" type="button">2</button>
+      <button class="btn" type="button">3</button>
+      <button class="btn" type="button">4</button>
+
+        <div class="item-container">
+          <div class="e">iPhone</div>
+          <input type="checkbox" class="item" value="700" name="iPhone">    
+          <button id="price" value="700" type="button">700</button>
+        </div>
+      
+      
+        <div class="item-container">
+          Laptop
+          <input type="checkbox" class="item" value="900" name="MacBook Pro">
+        </div>
+      
+        <div class="item-container">
+          AirPods
+          <input type="checkbox" class="item" value="180" name="AirPods">
+        </div>
+      
+      
+
+
+
+<div class="reciept">
+    <div class="reciept-banner">
+        <i class="fab fa-apple"></i>
+        <p>08-07-2018</p>
+    </div>
+    <div class="reciept-card">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">DESCRIPTION</th>
+                <th scope="col">SUBTOTAL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="item-type" id="demo"></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="item-type"></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="item-type"></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td id="total"></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span>You can click on the buttons:</span>
+<section>
+  <input class="button" type="button" value="700">s1kdskdkdskds-1
+  <input class="button" type="button" value="800">s1-2
+</section>
+
+
+
+
+      </form>
+
+
+<script>
+
+
+
+
+
+
+
+
+document.getElementById('price').addEventListener('click', function (){
+ var button = document.getElementById('price').value;
+ document.getElementById('demo').innerHTML = button;
+
+});
+
+
+
+// var allButtons = document.querySelectorAll('button[class^=button]');
+
+// for (var i = 0; i < allButtons.length; i++){
+//   allButtons[i].addEventListener('click', function(){
+//     console.clear();
+//     console.log("you clicked:", this.innerHTML);
+//   });
+// }
+
+
+
+
+
+
+
+// var allButtons = document.querySelectorAll('input[class^=button]');
+
+// for (var i = 0; i < allButtons.length; i++){
+//   allButtons[i].addEventListener('click', function(){
+//     var buttonVal = this.value;
+//     // console.log(buttonVal);
+//     document.getElementById('demo').innerHTML += buttonVal;
+
+   
+    
+//   });
+// }
+
+
+
+
+
+
+
+
+
+
+
+function updatePrice(){
+  var sum = 0;
+  var form = document.getElementById('form-items');
+
+
+
+var allButtons = document.querySelectorAll('input[class^=button]');
+
+
+for (var i = 0; i < allButtons.length; i++){
+  allButtons[i].addEventListener('click', function(){
+    var buttonVal = this.value;
+    // console.log(buttonVal);
+    document.getElementById('demo').innerHTML += '<div class="tt">' + buttonVal + '<div><inpunt type="button" class="remove"><li>Remove</li></ol><br><br></div>' + '</div>';
+
+     sum += parseFloat(this.value);  
+    //  console.log(sum);
+    document.getElementById('total').innerHTML = sum;
+
+    //use loop to target all "remove" buttons
+    for (var i = 0; i <  document.getElementsByClassName("tt").length; i++){
+      document.getElementsByClassName("remove")[i].addEventListener("click", function(){
+        alert('1');
+    
+        // this.remove('.tt');
+        // this.classList.remove("tt");
+        // console.log('tt');
+       
+        
+        // this.innerHTML = '';
+        // document.getElementsByClassName("tt")[0].parentNode.removeChild(document.getElementsByClassName("tt")[0]);
+        document.getElementsByClassName("tt").parentNode.removeChild(document.getElementsByClassName("tt"));
+      });
+    }
+
+  });
+
+}
+
+
+
+
+}
+
+
+document.getElementById('form-items').addEventListener('change', updatePrice);
+updatePrice();
+
+
+
+
+</script>
+
+</body>
+</html>
