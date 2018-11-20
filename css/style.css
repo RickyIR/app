@@ -20,5 +20,8 @@ body {
       background: white; }
       body .reciept-card table td {
         border: none; }
+        p{
+          color:red;
+        }
 
 /*# sourceMappingURL=style.css.map */
